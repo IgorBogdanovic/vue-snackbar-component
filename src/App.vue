@@ -7,7 +7,7 @@
       <button class="green" @click="activateSnackbar('green')">Click me!</button>
       <button class="yellow" @click="activateSnackbar('yellow')">Click me!</button>
     </div>
-    <snackbar></snackbar>
+    <snackbar/>
   </div>
 </template>
 
@@ -52,6 +52,7 @@ export default {
     align-items: center;
     button {
       font-family: 'Courier New', Courier, monospace;
+      font-size: 14px;
       font-weight: 900;
       padding: .5rem 1rem;
       margin: 1.5rem 0;
@@ -60,6 +61,9 @@ export default {
       outline: none;
       box-shadow: 1px 2px 6px 0 rgba(0, 0, 0, 0.5);
       cursor: pointer;
+      @media screen and (max-width: 767px) {
+        margin: 1rem 0;
+      }
       &:active {
         box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, 0.25);
       }

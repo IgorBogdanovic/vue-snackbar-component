@@ -78,7 +78,7 @@ export default {
 <style lang="scss" scoped>
 .slide {
   &-enter-active, &-leave-active {
-    transition: all 2s ease-in-out;
+    transition: all .6s ease-in-out;
   }
   &-enter, &-leave-to {
     transform: translateX(-100%) translateX(-1rem);
@@ -94,27 +94,44 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: calc(100vw - 2rem);
+  max-width: calc(100vw - 7rem);
   padding: .875rem 2.5rem;
   z-index: 100;
   background-color: lightgray;
   border-radius: 5px;
   box-shadow: 0 4px 8px 0 rgba(212, 212, 212, 0.5);
+  @media screen and (max-width: 767px) {
+    max-width: calc(100vw - 4.5rem);
+    padding: .875rem 1.25rem;
+  }
   &--with-emphasis {
+    max-width: calc(100vw - 4rem);
     min-width: 21.5rem;
     padding: .875rem 1rem .875rem;
     border-left: 5px solid;
+    @media screen and (max-width: 767px) {
+      max-width: calc(100vw - 3rem);
+      min-width: 17rem;
+      padding: .875rem .5rem;
+    }
     .snackbar-message {
       margin-right: 3.75rem;
+      @media screen and (max-width: 767px) {
+        margin-right: 1.5rem;
+      }
     }
   }
   &-message {
     display: inline-block;
     margin: 0;
+    font-size: 14px;
     color: black;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
+    @media screen and (max-width: 767px) {
+      font-size: 12px;
+    }
   }
   &-buttons-wrapper {
     display: flex;
@@ -124,6 +141,7 @@ export default {
     padding: 0;
     margin-right: 1rem;
     color: black;
+    font-size: 14px;
     font-weight: 700;
     text-transform: uppercase;
     background: none;
